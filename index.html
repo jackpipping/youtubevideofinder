@@ -1,20 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Search Box Design</title>
-	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<script>
+var myHeader = "youtubelink";
+
+//function myFunction() {
+
+
+  //document.getElementById("demo").innerHTML = myHeader;
+//}
+
+
+
+
+function getValue (id) {
+  //test link: https://www.youtube.com/watch?v=VVaRSPaBlDc&list=LLKa2qEP1U_hYEWGVLI0xY4Q&index=258
+
+    text = document.getElementById(id).value;
+    /*var url = new URL(text);
+    var hostname = url.search;*/
+    var text = text.split("&").join("=");
+    var text =text.split('=');
+
+    var str = "Google website link";
+    var result = str.link("https://www.google.com/search?q="+text[1]);
+
+    document.getElementById("demo").innerHTML = result;
+    return false;
+}
+
+
+
+</script>
+
+<style>
+
+
+
+.container {
+  height: 1000px;
+  position: relative;
+  border: none;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center2 {
+  margin: 0.3;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.center3 {
+  margin: 0.3;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+p {text-align: center;}
+label {text-align: center;}
+form {text-align: center;}
+button {text-align: center;}
+form {text-align: center;}
+
+</style>
+
 </head>
-<body>
-	
+<body style="background-color:powderblue;">
 
 
-<div class="wrapper">
-	<input type="text" class="input" 
-	placeholder="What are you looking for?">
-	<div class="searchbtn"><i class="fas fa-search"></i></div>
+
+<div class="container">
+
+  <div class = 'center3'>
+    <h1>
+    Find a deleted youtube video
+  </h1>
+  </div>
+
+  <div class = 'center2'>
+    <p>
+    Have you ever had a deleted music video in your playlist? And you forgot what it is? This website helps you find the title of the music that was deleted! You simply have to enter the url of the deleted youtube video into the search box. P.S. It doesn't work for every single video, but will generally work on the popular ones e.g. video with a million views
+  </p>
+  </div>
+
+
+  <div class="center">
+<p> Copy this link and paste it in goolge: </p>
+<p id="demo">A website link</p>
+
+
+
+<p>Youtube Link:</p>
+
+<form onsubmit="return getValue('youtubelink')">
+	<input type="text" id="youtubelink" name="youtubelink">
+</form> <br>
+
+    <button type="button"
+    onclick="return getValue('youtubelink')" onclick = "myFunction">
+    Click me to have the link for youtube video.<br></button>
+  </div>
 </div>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
